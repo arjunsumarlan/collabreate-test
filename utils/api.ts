@@ -1,6 +1,5 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
-const API_URL = 'http://localhost:3000/api';
+import { API_URL } from './config';
 
 interface TransactionSummary {
   labels: string[];

@@ -142,15 +142,46 @@ The frontend is built with React Native using Expo.
    npm install
    ```
 
-3. Start the development server:
+3. Set up environment variables:
+   ```bash
+   # Create .env.development file
+   cp .env.example .env.development
+   ```
+
+   Configure the API URL in .env.development:
+   ```env
+   EXPO_PUBLIC_API_URL=http://localhost:3000/api
+   ```
+
+   For physical devices, replace localhost with your computer's local IP address:
+   ```env
+   EXPO_PUBLIC_API_URL=http://192.168.1.xxx:3000/api
+   ```
+
+4. Start the development server:
    ```bash
    npm start
    ```
 
-4. Run on your preferred platform:
+5. Run on your preferred platform:
    - Press `i` for iOS
    - Press `a` for Android
    - Scan QR code with Expo Go app for physical device
+
+## Environment Setup
+
+### Backend (.env)
+```env
+DATABASE_URL="postgresql://local:password123@localhost:5432/transactions_db?schema=public"
+JWT_SECRET="your-secret-key"
+```
+
+### Frontend (.env.development)
+```env
+EXPO_PUBLIC_API_URL=http://localhost:3000/api
+```
+
+Note: When testing on physical devices, replace localhost with your computer's local IP address.
 
 ## API Endpoints
 
